@@ -1,201 +1,101 @@
-body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #260936;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Use min-height to accommodate all content */
-    margin: 0;
-    overflow: hidden;
-    position: relative; /* Needed for absolute positioning of footer */
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1; /* Ensure content appears above the video */
-    padding: 20px; /* Add padding for breathing space */
-    width: 90%; /* Take most of the screen width on small devices */
-    max-width: 600px; /* Limit width on larger screens */
-    min-height: calc(100vh - 40px); /* Ensure content container doesn't push the footer off-screen */
-    box-sizing: border-box; /* Include padding in height calculations */
-}
-
-.name-logo-image {
-    width: 100%; /* Make the image responsive */
-    height: auto;
-    margin-bottom: 20px; /* Space between image and paragraph box */
-}
-
-.paragraph-box {
-    background-color: #333333;
-    color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
-    width: 100%; /* Make the box responsive */
-    max-width: 500px; /* Limit width on larger screens */
-    height: 100px; /* Fixed height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    margin-bottom: 20px; /* Space between paragraph box and buttons */
-    padding: 10px;
-    border: 2px solid #680089;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Make the container responsive */
-}
-
+/* General button styling */
 .button {
-    background-color: #333333;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 30px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    border-radius: 12px;
-    width: 100%; /* Make the button responsive */
-    max-width: 250px; /* Limit width on larger screens */
-    justify-content: space-between;
-    border: 2px solid #680089;
-    transition: background-color 0.3s, transform 0.3s;
+    display: block; /* Makes each button a block-level element, stacking them vertically */
+    width: 20%; /* Sets the width of each button */
+    margin: 10px auto; /* Centers the button and adds space around each button */
+    padding: 8px 15px; /* Reduces the padding to make the buttons shorter */
+    font-size: 18px; /* Sets the font size */
+    text-align: center; /* Centers the text within the button */
+    text-decoration: none; /* Removes underline from links */
+    background-color: #333; /* Sets the background color of the button */
+    color: white; /* Sets the text color */
+    border-radius: 25px; /* Rounds the corners of the button */
+    transition: all 0.3s ease; /* Smooth transition for any changes on hover or click */
+    line-height: 1.5; /* Adjusts the line height for stacked text */
 }
 
+/* Styling for images inside buttons */
 .button img {
-    width: 40px;
-    height: 40px;
-    margin-right: 15px;
-    border-radius: 6px;
-}
-body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #260936;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Use min-height to accommodate all content */
-    margin: 0;
-    overflow-y: auto; /* Enable vertical scrolling */
-    -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
-    position: relative; /* Needed for absolute positioning of footer */
+    height: 20px; /* Sets the height of the images */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+    margin-right: 10px; /* Adds space between the image and the text */
 }
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1; /* Ensure content appears above the video */
-    padding: 20px; /* Add padding for breathing space */
-    width: 90%; /* Take most of the screen width on small devices */
-    max-width: 600px; /* Limit width on larger screens */
-    min-height: calc(100vh - 40px); /* Ensure content container doesn't push the footer off-screen */
-    box-sizing: border-box; /* Include padding in height calculations */
+/* Specific styling for the text within the button */
+.button-text {
+    display: inline-block; /* Keeps the text block within the button */
+    vertical-align: middle; /* Aligns the text block vertically with the image */
+    text-align: left; /* Aligns text inside the button to the left */
 }
 
-.name-logo-image {
-    width: 100%; /* Make the image responsive */
-    height: auto;
-    margin-bottom: 20px; /* Space between image and paragraph box */
+/* Styling for the discount text within the button */
+.discount-text {
+    font-size: 14px; /* Sets a smaller font size for the discount text */
+    color: #FFD700; /* Sets the color of the discount text (gold) */
 }
 
-.paragraph-box {
-    background-color: #333333;
-    color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
-    width: 100%; /* Make the box responsive */
-    max-width: 500px; /* Limit width on larger screens */
-    height: 100px; /* Fixed height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    margin-bottom: 20px; /* Space between paragraph box and buttons */
-    padding: 10px;
-    border: 2px solid #680089;
+/* Shaking button animation */
+.shaking-button {
+    animation: shake 0.5s; /* Applies the shake animation over 0.5 seconds */
+    animation-iteration-count: infinite; /* Repeats the animation indefinitely */
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Make the container responsive */
+@keyframes shake {
+    /* Defines the keyframes for the shaking effect */
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.button {
-    background-color: #333333;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 30px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    border-radius: 12px;
-    width: 100%; /* Make the button responsive */
-    max-width: 250px; /* Limit width on larger screens */
-    justify-content: space-between;
-    border: 2px solid #680089;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.button img {
-    width: 40px;
-    height: 40px;
-    margin-right: 15px;
-    border-radius: 6px;
-}
-
-.button:hover {
-    background-color: #00baaa;
-    transform: scale(1.05);
-}
-
+/* Styling for the background video */
 #background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1; /* Ensure video is in the background */
-    opacity: 0.5;
-}
-
-.disappearing-button:hover {
-    opacity: 0; /* Make the button disappear on hover */
-}
-
-footer {
     position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    font-size: 10px; /* Smaller font size */
-    font-family: 'Press Start 2P', cursive;
-    padding: 10px 0; /* Add some padding to the footer */
+    top: 0;
+    left: 0;
+    min-width: 100%; /* Ensures the video covers the full width */
+    min-height: 100%; /* Ensures the video covers the full height */
+    z-index: -1; /* Places the video behind other content */
 }
 
-.button:hover {
-    background-color: #00baaa;
-    transform: scale(1.05);
+/* Styling for content container */
+.content-container {
+    position: relative;
+    z-index: 1; /* Ensures content appears above the background video */
+    text-align: center; /* Centers the content within the container */
+    color: white; /* Sets the text color */
+    padding-top: 50px; /* Adds space at the top of the content */
 }
 
-#background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1; /* Ensure video is in the background */
-    opacity: 0.5;
+/* Styling for the name logo image */
+.name-logo-image {
+    max-width: 80%; /* Limits the width of the image */
+    height: auto; /* Maintains the aspect ratio of the image */
 }
+
+/* Styling for the button container */
+.button-container {
+    margin-top: 20px; /* Adds space between the logo and the buttons */
+    display: flex;
+    flex-direction: column; /* Stacks the buttons vertically */
+    align-items: center; /* Centers the buttons horizontally */
+}
+
+/* Styling for the footer */
+footer {
+    margin-top: 50px; /* Adds space above the footer */
+    font-size: 14px; /* Sets a smaller font size for the footer text */
+    color: #ccc; /* Sets a lighter color for the footer text */
+}
+
+
 @media screen and (max-width: 768px) {
     /* Adjust video dimensions for screens smaller than 768px (common for mobile devices) */
     #background-video {
