@@ -18,7 +18,7 @@
    
   </video>-->
 </video>
-
+<!--Trying to force a new commit-->
 <div class="content-container">
     <!-- Space for a large image -->
     <img src="Images/Killer_Queen55 Logo.png" alt="Name Logo Image" class="name-logo-image">
@@ -29,7 +29,7 @@
     <a href="https://www.legendarysupps.com/kq55" class="button shaking-button">
         <img src="Images/Kraken Logo.png" alt="Legendary Supps ">
         <span class="button-text">
-            Legendary Supps<br>
+            <br>
             <span class="discount-text">* KQ10 for 10% off *</span>
         </span>
     </a>
@@ -65,7 +65,7 @@
 it's because Im not proud enough yet of any of the programs Im working on
 to share the code just yet
 One day this button will lead you somewhere but not today. -->
-       <a href="#" class="button disappearing-button">
+       <a href="#" class="button running-button disappearing-button">
         <img src="Images/github logo.png" alt="Disappearing Button">
         Programing Projects
     </a>
@@ -75,6 +75,30 @@ One day this button will lead you somewhere but not today. -->
   <footer>
     <p>Website created by me ^.^ Killer_Queen55</p>
 </footer>
+
+<!--run away button stuff-->
+
+<script>
+    const runawayButton = document.querySelector('.running-button');
+    const container = document.querySelector('.button-container');
+
+    runawayButton.addEventListener('mouseover', function() {
+        // Get the dimensions of the container
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = runawayButton.getBoundingClientRect();
+
+        // Calculate new random position for the button
+        const maxLeft = containerRect.width - buttonRect.width;
+        const maxTop = containerRect.height - buttonRect.height;
+
+        const newLeft = Math.floor(Math.random() * maxLeft);
+        const newTop = Math.floor(Math.random() * maxTop);
+
+        // Set the button's new position
+        runawayButton.style.left = `${newLeft}px`;
+        runawayButton.style.top = `${newTop}px`;
+    });
+</script>
 
 </body>
 </html>
