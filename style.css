@@ -104,3 +104,30 @@ footer {
     }
 }
 
+/* General button styling */
+.button {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #333;
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative; /* Allows the button to be positioned within its parent container */
+}
+
+/* Additional styling for the runaway button */
+.running-button {
+    cursor: pointer;
+    position: absolute; /* Allows the button to move freely within its container */
+}
+
+.container {
+    position: relative; /* Ensures the button stays within the container's bounds */
+    height: 300px; /* Sets the height of the container */
+}
+*/
