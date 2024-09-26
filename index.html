@@ -6,99 +6,116 @@
     <title>KQportal</title>
     <link rel="icon" type="image/png" href="Images/Killer_Queen logo.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensure the button container and buttons are positioned correctly */
+        .button-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* This keeps the buttons at the bottom */
+            align-items: center; /* Center them horizontally */
+        }
+
+        /* Ensure the disappearing button can be positioned freely */
+        .running-button {
+            position: absolute;
+            bottom: 0; /* Start at the bottom */
+            left: 50%; /* Center the button horizontally */
+            transform: translateX(-50%);
+            transition: left 0.3s, top 0.3s; /* Smooth transition when moving */
+        }
+
+        /* Updated styles for the background GIF */
+        #background-gif {
+            position: fixed; /* Fixed position to stay in place when scrolling */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            object-fit: cover; /* Cover the entire screen */
+            z-index: -1; /* Send to the back */
+        }
+    </style>
 </head>
 <body>
-   <!-- Video Section: Add your video here -->
-   <video autoplay muted loop id="background-video">
-    <source src="Videos/Background Video.mp4" type="video/mp4">
-   
- 
-<!-- <video autoplay muted loop id="background-video-mobile" style="display: none;">
-    <source src="Videos/Mobile Video .mp4" type="video/mp4">
-   
-  </video>-->
-</video>
-<!--Trying to force a new commit-->
-<div class="content-container">
-    <!-- Space for a large image -->
-    <img src="Images/Killer_Queen55 Logo.png" alt="Name Logo Image" class="name-logo-image">
+   <!-- Background img GIF -->
+   <img id="background-gif" src="Videos/Background Video.gif" alt="Background GIF">
 
+   <div class="content-container">
+       <!-- Space for a large image -->
+       <img src="Images/Killer_Queen55 Logo.png" alt="Name Logo Image" class="name-logo-image">
 
-    <div class="button-container">
-          <!-- New Shaking Button -->
-    <a href="https://www.legendarysupps.com/kq55" class="button shaking-button">
-        <img src="Images/Kraken Logo.png" alt="Legendary Supps ">
-        <span class="button-text">
-            <br>
-            <span class="discount-text">* KQ10 for 10% off *</span>
-        </span>
-    </a>
-    
-        <a href="https://www.twitch.tv/killer_queen55" class="button">
-            <img src="Images/Twitch logo.png" alt="Twitch">
-            Twitch
-        </a>
-        <a href="https://www.tiktok.com/@killer_queen5555" class="button">
-            <img src="Images/TikTok Logo.png" alt="TikTok">
-            TikTok
-        </a>
-        <a href="https://www.youtube.com/channel/UCqLds4OYjlIBTG7zwLkgh_A" class="button">
-            <img src="Images/Youtube logo.png" alt="YouTube">
-            YouTube
-        </a>
-        <a href="https://www.passes.com/killer_queen55" class="button">
-            <img src="Images/passes logo.png" alt="Passes">
-            Passes
-        </a>
-        <a href="https://www.instagram.com/killer__queen55/" class="button">
-            <img src="Images/Instagram logo.png" alt="Instagram">
-            Instagram
-        </a>
-        <a href="https://twitter.com/Queen55Killer/" class="button">
-            <img src="Images/X logo.png" alt="Twitter">
-            X (aka Twitter)
-        </a>
-        
-       <!-- New disappearing button -->
-       <!--So if you are smart enough to be reading this
+       <div class="button-container">
+            <a href="https://www.legendarysupps.com/kq55" class="button shaking-button">
+                <img src="Images/Kraken Logo.png" alt="Legendary Supps "> Legendary Supps
+                <span class="button-text">
+                    <br>
+                    <span class="discount-text">* KQ10 for 10% off *</span>
+                </span>
+            </a>
+            <a href="https://www.twitch.tv/killer_queen55" class="button">
+                <img src="Images/Twitch logo.png" alt="Twitch">
+                Twitch
+            </a>
+            <a href="https://www.tiktok.com/@killer_queen5555" class="button">
+                <img src="Images/TikTok Logo.png" alt="TikTok">
+                TikTok
+            </a>
+            <a href="https://www.youtube.com/channel/UCqLds4OYjlIBTG7zwLkgh_A" class="button">
+                <img src="Images/Youtube logo.png" alt="YouTube">
+                YouTube
+            </a>
+            <a href="https://www.passes.com/killer_queen55" class="button">
+                <img src="Images/passes logo.png" alt="Passes">
+                Passes
+            </a>
+            <a href="https://www.instagram.com/killer__queen55/" class="button">
+                <img src="Images/Instagram logo.png" alt="Instagram">
+                Instagram
+            </a>
+            <a href="https://twitter.com/Queen55Killer/" class="button">
+                <img src="Images/X logo.png" alt="Twitter">
+                X (aka Twitter)
+            </a>
+            <!-- Disappearing Button -->
+            <a href="#" class="button running-button disappearing-button">
+                <img src="Images/github logo.png" alt="running-button">
+                Programming Projects
+            </a>
+        </div>
+    </div>
+     <!--So if you are smart enough to be reading this
     and youre like why doesnt this button work
 it's because Im not proud enough yet of any of the programs Im working on
 to share the code just yet
 One day this button will lead you somewhere but not today. -->
-       <a href="#" class="button running-button disappearing-button">
-        <img src="Images/github logo.png" alt="Disappearing Button">
-        Programing Projects
-    </a>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Website created by me ^.^ Killer_Queen55</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>Website created by me ^.^ Killer_Queen55</p>
-</footer>
+    <script>
+        const runawayButton = document.querySelector('.running-button');
+        const container = document.querySelector('.button-container');
 
-<!--run away button stuff-->
+        runawayButton.addEventListener('mouseover', function() {
+            // Get the dimensions of the container
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = runawayButton.getBoundingClientRect();
 
-<script>
-    const runawayButton = document.querySelector('.running-button');
-    const container = document.querySelector('.button-container');
+            // Calculate new random position for the button
+            const maxLeft = containerRect.width - buttonRect.width;
+            const maxTop = containerRect.height - buttonRect.height;
 
-    runawayButton.addEventListener('mouseover', function() {
-        // Get the dimensions of the container
-        const containerRect = container.getBoundingClientRect();
-        const buttonRect = runawayButton.getBoundingClientRect();
+            const newLeft = Math.floor(Math.random() * maxLeft);
+            const newTop = Math.floor(Math.random() * maxTop);
 
-        // Calculate new random position for the button
-        const maxLeft = containerRect.width - buttonRect.width;
-        const maxTop = containerRect.height - buttonRect.height;
-
-        const newLeft = Math.floor(Math.random() * maxLeft);
-        const newTop = Math.floor(Math.random() * maxTop);
-
-        // Set the button's new position
-        runawayButton.style.left = `${newLeft}px`;
-        runawayButton.style.top = `${newTop}px`;
-    });
-</script>
-
+            // Set the button's new position
+            runawayButton.style.left = `${newLeft}px`;
+            runawayButton.style.top = `${newTop}px`;
+        });
+    </script>
 </body>
 </html>
