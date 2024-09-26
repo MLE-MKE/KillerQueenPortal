@@ -55,15 +55,15 @@
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* Styling for the background video */
+/* Styling for the background video 
 #background-video {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%; /* Ensures the video covers the full width */
-    min-height: 100%; /* Ensures the video covers the full height */
-    z-index: -1; /* Places the video behind other content */
-}
+    /*min-height: 100%; /* Ensures the video covers the full height */
+    /*z-index: -1; /* Places the video behind other content */
+
 
 /* Styling for content container */
 .content-container {
@@ -82,10 +82,15 @@
 
 /* Styling for the button container */
 .button-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full viewport */
     margin-top: 20px; /* Adds space between the logo and the buttons */
     display: flex;
     flex-direction: column; /* Stacks the buttons vertically */
+    justify-content: flex-start; /* Aligns buttons to the top */
     align-items: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Space between buttons */
 }
 
 /* Styling for the footer */
@@ -95,39 +100,36 @@ footer {
     color: #ccc; /* Sets a lighter color for the footer text */
 }
 
+/* Styling for the runaway button */
+.running-button {
+    cursor: pointer;
+    position: relative; /* Use relative to maintain flow with the other buttons */
+    width: 200px;
+    height: 50px;
+    margin-top: 20px; /* Add space above the runaway button */
+}
 
+.running-button img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+/* Specific margin for the Twitter button */
+a[href="https://twitter.com/Queen55Killer/"] {
+    margin-bottom: 20px; /* Space below Twitter button */
+}
+
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    /* Adjust video dimensions for screens smaller than 768px (common for mobile devices) */
-    #background-video {
+    /* Adjust video dimensions for screens smaller than 768px */
+    /*#background-video {
         width: 100%;
         height: auto;
     }
-}
 
-/* General button styling */
-.button {
-    display: block;
-    width: 200px;
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #333;
-    color: white;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    position: relative; /* Allows the button to be positioned within its parent container */
+    /* Ensure buttons resize properly on smaller screens */
+    .button {
+        width: 80%; /* Make buttons wider on smaller screens */
+    }
 }
-
-/* Additional styling for the runaway button */
-.running-button {
-    cursor: pointer;
-    position: absolute; /* Allows the button to move freely within its container */
-}
-
-.container {
-    position: relative; /* Ensures the button stays within the container's bounds */
-    height: 300px; /* Sets the height of the container */
-}
-*/
