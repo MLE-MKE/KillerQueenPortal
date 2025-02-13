@@ -55,15 +55,15 @@
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* Styling for the background video 
+/* Styling for the background video */
 #background-video {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%; /* Ensures the video covers the full width */
-    /*min-height: 100%; /* Ensures the video covers the full height */
-    /*z-index: -1; /* Places the video behind other content */
-
+    min-height: 100%; /* Ensures the video covers the full height */
+    z-index: -1; /* Places the video behind other content */
+}
 
 /* Styling for content container */
 .content-container {
@@ -88,7 +88,7 @@
     margin-top: 20px; /* Adds space between the logo and the buttons */
     display: flex;
     flex-direction: column; /* Stacks the buttons vertically */
-    justify-content: flex-start; /* Aligns buttons to the top */
+    justify-content: flex-end; /* Aligns buttons to the top */
     align-items: center; /* Centers the buttons horizontally */
     gap: 20px; /* Space between buttons */
 }
@@ -115,6 +115,118 @@ footer {
     vertical-align: middle;
 }
 
+/* Styling for the main download button */
+.download-button {
+    display: flex; /* Allows text and image to align */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Centers content horizontally */
+    width: 20%; /* Match other buttons */
+    margin: 10px auto; /* Center button */
+    padding: 8px 15px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #333; /* Same color as other buttons */
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Image inside the Download Button */
+.download-button img {
+    height: 20px; /* Match other button images */
+    vertical-align: middle;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Text inside the Download Button */
+.download-button .button-text {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Hover effect */
+.download-button:hover {
+    background-color: #555;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: rgb(255, 106, 205);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Adjust width to 90% on smaller screens */
+    max-width: 400px; /* Limit the maximum width */
+    position: relative;
+    overflow-y: auto; /* Allow scrolling if the content overflows */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Modal Download Buttons */
+.modal-button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #770063;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure buttons fill the modal width */
+}
+
+.modal-button:hover {
+    background-color: #1e0072;
+}
+
+/* Ensure that the body and html cover the full screen */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Make the container holding the PDF responsive */
+.pdf-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    padding: 10px; /* Some space around the PDF */
+    overflow: hidden; /* Prevents overflow */
+    box-sizing: border-box;
+}
+
+/* Make the iframe holding the PDF responsive */
+.pdf-container iframe {
+    width: 100%; /* Ensures iframe scales with container */
+    height: 100%; /* Full height of the container */
+    border: none; /* Removes the border around iframe */
+}
+
+
 /* Specific margin for the Twitter button */
 a[href="https://twitter.com/Queen55Killer/"] {
     margin-bottom: 20px; /* Space below Twitter button */
@@ -122,14 +234,20 @@ a[href="https://twitter.com/Queen55Killer/"] {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    /* Adjust video dimensions for screens smaller than 768px */
-    /*#background-video {
-        width: 100%;
-        height: auto;
-    }
-
     /* Ensure buttons resize properly on smaller screens */
     .button {
         width: 80%; /* Make buttons wider on smaller screens */
+    }
+
+    /* Modal content adjustments */
+    .modal-content {
+        width: 90%; /* Make modal content wider on smaller screens */
+    }
+    .pdf-container iframe {
+        height: 80vh; /* Adjust height for smaller screens */
+
+    /* Larger buttons for mobile */
+    .modal-button {
+        padding: 15px 25px; /* Make buttons larger */
     }
 }
