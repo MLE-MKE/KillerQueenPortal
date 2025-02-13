@@ -55,10 +55,7 @@
                     <span class="discount-text">* KQ10 for 10% off *</span>
                 </span>
             </a>
-            <a href="https://www.twitch.tv/killer_queen55" class="button">
-                <img src="Images/Twitch logo.png" alt="Twitch">
-                Twitch
-            </a>
+        
             <a href="https://www.tiktok.com/@killer_queen5555" class="button">
                 <img src="Images/TikTok Logo.png" alt="TikTok">
                 TikTok
@@ -67,10 +64,31 @@
                 <img src="Images/Youtube logo.png" alt="YouTube">
                 YouTube
             </a>
-            <a href="https://www.passes.com/killer_queen55" class="button">
-                <img src="Images/passes logo.png" alt="Passes">
-                Passes
-            </a>
+
+            <!--Valentines/ Download Section-->
+            <!-- Main Download Button -->
+<button id="openModalButton" class="button">
+    <img src="Images/KQ Brand Logo (1).png" alt="design brand logo">
+    <span class="button-text">Free Valentines PDF</span>
+</button>
+
+<!-- Modal (Hidden by Default) -->
+<div id="pdfModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Free Valentines Download</h2>
+        <a href="Files/I choose You valentine.pdf" download="I choose You valentine.pdf" class="modal-button">Pokemon</a>
+        <a href="Files/Make Me Moist Valentines.pdf" download="Make Me Moist Valentines.pdf" class="modal-button">Cake</a>
+        <a href="Files/Web Dev Valentines.pdf" download="Web Dev Valentines.pdf" class="modal-button">Web Dev</a>
+    </div>
+</div>
+
+<a href="https://www.twitch.tv/killer_queen55" class="button">
+    <img src="Images/Twitch logo.png" alt="Twitch">
+    Twitch
+</a>
+
+      
             <a href="https://www.instagram.com/killer__queen55/" class="button">
                 <img src="Images/Instagram logo.png" alt="Instagram">
                 Instagram
@@ -78,6 +96,11 @@
             <a href="https://twitter.com/Queen55Killer/" class="button">
                 <img src="Images/X logo.png" alt="Twitter">
                 X (aka Twitter)
+            </a>
+
+            <a href="https://www.passes.com/killer_queen55" class="button">
+                <img src="Images/passes logo.png" alt="Passes">
+                Passes
             </a>
             <!-- Disappearing Button -->
             <a href="#" class="button running-button disappearing-button">
@@ -116,6 +139,32 @@ One day this button will lead you somewhere but not today. -->
             runawayButton.style.left = `${newLeft}px`;
             runawayButton.style.top = `${newTop}px`;
         });
+        
+//Valntines Download Button Handler
+        document.addEventListener("DOMContentLoaded", function () {
+        // Select the modal and the button that opens it
+        const openModalButton = document.getElementById("openModalButton");
+        const modal = document.getElementById("pdfModal");
+        const closeModalButton = modal.querySelector(".close");
+
+        // Open the modal when the button is clicked
+        openModalButton.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        // Close the modal when the close button (×) is clicked
+        closeModalButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+        
     </script>
 </body>
 </html>
