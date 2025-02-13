@@ -37,6 +37,60 @@
             object-fit: cover; /* Cover the entire screen */
             z-index: -1; /* Send to the back */
         }
+
+        /* Modal Styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Modal Content Box */
+        .modal-content {
+            background-color: rgb(255, 106, 205);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%; /* Adjust width to 90% on smaller screens */
+            max-width: 400px; /* Limit the maximum width */
+            position: relative;
+            overflow-y: auto; /* Allow scrolling if the content overflows */
+            cursor: move; /* Indicate that the modal is draggable */
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Modal Download Buttons */
+        .modal-button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #770063;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ensure buttons fill the modal width */
+        }
+
+        .modal-button:hover {
+            background-color: #1e0072;
+        }
+
     </style>
 </head>
 <body>
@@ -109,17 +163,37 @@
             </a>
         </div>
     </div>
-     <!--So if you are smart enough to be reading this
-    and youre like why doesnt this button work
-it's because Im not proud enough yet of any of the programs Im working on
-to share the code just yet
-One day this button will lead you somewhere but not today. -->
-    <!-- Footer -->
+     <!-- Footer -->
     <footer>
         <p>Website created by me ^.^ Killer_Queen55</p>
     </footer>
 
     <script>
+        // Draggable modal functionality
+        const modalContent = document.querySelector(".modal-content");
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        modalContent.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - modalContent.getBoundingClientRect().left;
+            offsetY = e.clientY - modalContent.getBoundingClientRect().top;
+            modalContent.style.cursor = "move";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                modalContent.style.left = `${e.clientX - offsetX}px`;
+                modalContent.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            modalContent.style.cursor = "default";
+        });
+
+        // Runaway button handler
         const runawayButton = document.querySelector('.running-button');
         const container = document.querySelector('.button-container');
 
@@ -140,7 +214,7 @@ One day this button will lead you somewhere but not today. -->
             runawayButton.style.top = `${newTop}px`;
         });
         
-//Valntines Download Button Handler
+        // Valentines Download Button Handler
         document.addEventListener("DOMContentLoaded", function () {
         // Select the modal and the button that opens it
         const openModalButton = document.getElementById("openModalButton");
@@ -164,7 +238,6 @@ One day this button will lead you somewhere but not today. -->
             }
         });
     });
-        
     </script>
 </body>
 </html>
