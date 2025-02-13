@@ -226,7 +226,6 @@ html, body {
     border: none; /* Removes the border around iframe */
 }
 
-
 /* Specific margin for the Twitter button */
 a[href="https://twitter.com/Queen55Killer/"] {
     margin-bottom: 20px; /* Space below Twitter button */
@@ -243,8 +242,10 @@ a[href="https://twitter.com/Queen55Killer/"] {
     .modal-content {
         width: 90%; /* Make modal content wider on smaller screens */
     }
+
     .pdf-container iframe {
         height: 80vh; /* Adjust height for smaller screens */
+    }
 
     /* Larger buttons for mobile */
     .modal-button {
