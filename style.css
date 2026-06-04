@@ -216,6 +216,19 @@ html, body {
     margin: 0;
 }
 
+.venmo-qr-section {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.venmo-qr {
+    max-width: 250px;
+    width: 80%;
+    height: auto;
+    border-radius: 12px;
+}
+
 /* Make the container holding the PDF responsive */
 .pdf-container {
     position: relative;
