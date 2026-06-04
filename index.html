@@ -9,22 +9,25 @@
     <style>
         /* Ensure the button container and buttons are positioned correctly */
         .button-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* This keeps the buttons at the bottom */
-            align-items: center; /* Center them horizontally */
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
         }
 
         /* Ensure the disappearing button can be positioned freely */
         .running-button {
-            position: absolute;
-            bottom: 0; /* Start at the bottom */
-            left: 50%; /* Center the button horizontally */
-            transform: translateX(-50%);
-            transition: left 0.3s, top 0.3s; /* Smooth transition when moving */
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    transition: left 0.3s, top 0.3s;
         }
 
         /* Updated styles for the background GIF */
@@ -107,7 +110,7 @@
            
             
         <a href="https://venmo.com/code?user_id=2786639256485888279&created=1780599390" class="button" target="_blank" rel="noopener noreferrer">
-    <img src="Images/Tips.png " alt="Venmo">
+    <img src="Images/Tips.png" alt="Venmo">
     Support The Flow 
            </a>
             <a href="https://www.tiktok.com/@killer_queen5555" class="button">
