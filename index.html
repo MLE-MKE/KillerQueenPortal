@@ -193,81 +193,64 @@
 
         </div>
     </div>
+
+    <!-- ---- STUDY BUDY DOWNLOAD POPUP ---- -->
+
+    <div
+        id="studyBudyModal"
+        class="study-budy-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="studyBudyModalTitle"
+    >
+        <div class="study-budy-modal-panel">
+            <button
+                type="button"
+                id="closeStudyBudyModal"
+                class="study-budy-close-button"
+                aria-label="Close Study Budy download popup"
+            >
+                &times;
+            </button>
+
+            <h2 id="studyBudyModalTitle">Download Study Budy Desktop</h2>
+
+            <p>
+                Study Budy is a Windows desktop application for managing tasks,
+                study sessions, coworking, productivity, and body-doubling streams.
+            </p>
+
+            <p>
+                The download is a ZIP file. After it downloads, right-click the ZIP,
+                choose <strong>Extract All</strong>, then open the extracted folder
+                before running <strong>Study Budy.exe</strong>.
+            </p>
+
+            <div class="study-budy-modal-actions">
+                <a
+                    id="acceptStudyBudyDownload"
+                    class="study-budy-download-button"
+                    href="https://github.com/MLE-MKE/Study-Budy-Desktop/releases/download/v1.0.0/Study-Budy-Windows-v1.0.0.zip.zip"
+                >
+                    Download Study Budy ZIP
+                </a>
+
+                <button
+                    type="button"
+                    id="cancelStudyBudyDownload"
+                    class="study-budy-cancel-button"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
      <!-- Footer -->
     <footer>
         <p>Website created by me ^.^ Killer_Queen55</p>
     </footer>
 
-    <script>
-        // Draggable modal functionality
-        const modalContent = document.querySelector(".modal-content");
-        let isDragging = false;
-        let offsetX, offsetY;
-
-        modalContent.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            offsetX = e.clientX - modalContent.getBoundingClientRect().left;
-            offsetY = e.clientY - modalContent.getBoundingClientRect().top;
-            modalContent.style.cursor = "move";
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (isDragging) {
-                modalContent.style.left = `${e.clientX - offsetX}px`;
-                modalContent.style.top = `${e.clientY - offsetY}px`;
-            }
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-            modalContent.style.cursor = "default";
-        });
-
-        // Runaway button handler
-        const runawayButton = document.querySelector('.running-button');
-        const container = document.querySelector('.button-container');
-
-        runawayButton.addEventListener('mouseover', function() {
-            // Get the dimensions of the container
-            const containerRect = container.getBoundingClientRect();
-            const buttonRect = runawayButton.getBoundingClientRect();
-
-            // Calculate new random position for the button
-            const maxLeft = containerRect.width - buttonRect.width;
-            const maxTop = containerRect.height - buttonRect.height;
-
-            const newLeft = Math.floor(Math.random() * maxLeft);
-            const newTop = Math.floor(Math.random() * maxTop);
-
-            // Set the button's new position
-            runawayButton.style.left = `${newLeft}px`;
-            runawayButton.style.top = `${newTop}px`;
-        });
-        
-        // Valentines Download Button Handler
-        document.addEventListener("DOMContentLoaded", function () {
-        // Select the modal and the button that opens it
-        const openModalButton = document.getElementById("openModalButton");
-        const modal = document.getElementById("pdfModal");
-        const closeModalButton = modal.querySelector(".close");
-
-        // Open the modal when the button is clicked
-        openModalButton.addEventListener("click", function () {
-            modal.style.display = "block";
-        });
-
-        // Close the modal when the close button (×) is clicked
-        closeModalButton.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        // Close the modal when clicking outside of it
-        window.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

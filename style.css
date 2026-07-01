@@ -283,3 +283,103 @@ a[href="https://twitter.com/Queen55Killer/"] {
         padding: 12px 20px; /* Make buttons larger */
     }
 }
+
+/* ---- STUDY BUDY DOWNLOAD POPUP ---- */
+
+body.study-budy-modal-open {
+    overflow: hidden;
+}
+
+.study-budy-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.82);
+}
+
+.study-budy-modal.is-open {
+    display: flex;
+}
+
+.study-budy-modal-panel {
+    position: relative;
+    width: min(90vw, 560px);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px;
+    border: 3px solid #b66bff;
+    border-radius: 18px;
+    background-color: #2a0648;
+    color: #f1ecf8;
+    text-align: left;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.study-budy-modal-panel h2 {
+    margin-top: 0;
+    padding-right: 36px;
+    text-align: center;
+}
+
+.study-budy-close-button {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    border: none;
+    background: transparent;
+    color: #f1ecf8;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.study-budy-modal-actions {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.study-budy-download-button,
+.study-budy-cancel-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.study-budy-download-button {
+    background-color: #8d35d6;
+    color: white;
+}
+
+.study-budy-download-button:hover {
+    background-color: #b66bff;
+}
+
+.study-budy-cancel-button {
+    background-color: #3b145b;
+    color: #f1ecf8;
+}
+
+@media screen and (max-width: 768px) {
+    .study-budy-modal {
+        padding: 12px;
+    }
+
+    .study-budy-modal-panel {
+        width: 94vw;
+        padding: 28px 18px 20px;
+    }
+}

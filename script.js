@@ -1,55 +1,59 @@
-   // Get elements
-   const openModalButton = document.getElementById("openModalButton");
-   const modal = document.getElementById("pdfModal");
-   const closeModal = document.querySelector(".close");
-   var modalContent = document.querySelector('.modal-content');
+// ---- STUDY BUDY DOWNLOAD POPUP ----
 
-   // Variables to store initial mouse position and modal position
-   var offsetX, offsetY, isDragging = false;
+const openStudyBudyModalButton = document.getElementById("openStudyBudyModal");
+const studyBudyModal = document.getElementById("studyBudyModal");
+const closeStudyBudyModalButton = document.getElementById("closeStudyBudyModal");
+const cancelStudyBudyDownloadButton = document.getElementById("cancelStudyBudyDownload");
 
-   // Show modal when clicking the main button
-   openModalButton.addEventListener("click", () => {
-       modal.style.display = "flex";
-   });
+function openStudyBudyModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
 
-   // Close modal when clicking the close button
-   closeModal.addEventListener("click", () => {
-       modal.style.display = "none";
-   });
+    studyBudyModal.classList.add("is-open");
+    document.body.classList.add("study-budy-modal-open");
+}
 
-   // Close modal if the user clicks outside of it
-   window.addEventListener("click", (event) => {
-       if (event.target === modal) {
-           modal.style.display = "none";
-       }
-   });
+function closeStudyBudyModal() {
+    studyBudyModal.classList.remove("is-open");
+    document.body.classList.remove("study-budy-modal-open");
+}
 
-   // Function to handle mouse down event (start dragging)
-   modalContent.addEventListener('mousedown', function (e) {
-       isDragging = true;
-       offsetX = e.clientX - modalContent.getBoundingClientRect().left;
-       offsetY = e.clientY - modalContent.getBoundingClientRect().top;
-       modalContent.style.cursor = 'move'; // Change cursor to 'move' while dragging
-   
-      // Ensure modal content is always on top during dragging
-      modalContent.style.zIndex = '10000'; // Keep it at the front
-    });
+openStudyBudyModalButton.addEventListener("click", openStudyBudyModal);
+closeStudyBudyModalButton.addEventListener("click", closeStudyBudyModal);
+cancelStudyBudyDownloadButton.addEventListener("click", closeStudyBudyModal);
 
-   // Function to handle mouse move event (move the modal)
-   document.addEventListener('mousemove', function (e) {
-       if (isDragging) {
-           var x = e.clientX - offsetX;
-           var y = e.clientY - offsetY;
+studyBudyModal.addEventListener("click", function (event) {
+    if (event.target === studyBudyModal) {
+        closeStudyBudyModal();
+    }
+});
 
-           // Update the modal position
-           modalContent.style.left = x + 'px';
-           modalContent.style.top = y + 'px';
-       }
-   });
+document.addEventListener("keydown", function (event) {
+    if (
+        event.key === "Escape" &&
+        studyBudyModal.classList.contains("is-open")
+    ) {
+        closeStudyBudyModal();
+    }
+});
 
-   // Function to handle mouse up event (stop dragging)
-   document.addEventListener('mouseup', function () {
-       isDragging = false;
-       modalContent.style.cursor = 'default'; // Revert cursor to default
-       modalContent.style.zIndex = '10000'; // Maintain z-index when dragging stops 
-    });
+
+// ---- RUNAWAY BUTTON ----
+
+const runawayButton = document.querySelector(".running-button");
+const container = document.querySelector(".button-container");
+
+runawayButton.addEventListener("mouseover", function () {
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = runawayButton.getBoundingClientRect();
+
+    const maxLeft = containerRect.width - buttonRect.width;
+    const maxTop = containerRect.height - buttonRect.height;
+
+    const newLeft = Math.floor(Math.random() * maxLeft);
+    const newTop = Math.floor(Math.random() * maxTop);
+
+    runawayButton.style.left = `${newLeft}px`;
+    runawayButton.style.top = `${newTop}px`;
+});
