@@ -9,22 +9,25 @@
     <style>
         /* Ensure the button container and buttons are positioned correctly */
         .button-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* This keeps the buttons at the bottom */
-            align-items: center; /* Center them horizontally */
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
         }
 
         /* Ensure the disappearing button can be positioned freely */
         .running-button {
-            position: absolute;
-            bottom: 0; /* Start at the bottom */
-            left: 50%; /* Center the button horizontally */
-            transform: translateX(-50%);
-            transition: left 0.3s, top 0.3s; /* Smooth transition when moving */
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    transition: left 0.3s, top 0.3s;
         }
 
         /* Updated styles for the background GIF */
@@ -102,14 +105,29 @@
        <img src="Images/Killer_Queen55 Logo.png" alt="Name Logo Image" class="name-logo-image">
 
        <div class="button-container">
-            <a href="https://www.legendarysupps.com/kq55" class="button shaking-button">
-                <img src="Images/Kraken Logo.png" alt="Legendary Supps "> Legendary Supps
-                <span class="button-text">
-                    <br>
-                    <span class="discount-text">* KQ10 for 10% off *</span>
-                </span>
-            </a>
-        
+
+           
+               <!-- ---- STUDY BUDY DOWNLOAD BUTTON ---- -->
+
+<!-- ---- STUDY BUDY DOWNLOAD BUTTON ---- -->
+
+<a
+    href="#"
+    class="button"
+    id="openStudyBudyModal"
+    role="button"
+    aria-haspopup="dialog"
+    aria-controls="studyBudyModal"
+>
+    <img src="Images/study-budy-icon.png" alt="Study Budy">
+    Study Budy Desktop
+</a>
+            
+        <a href="https://venmo.com/code?user_id=2786639256485888279&created=1780599390" class="button" target="_blank" rel="noopener noreferrer">
+    <img src="Images/Tips.png" alt="Venmo">
+    Support The Flow 
+           </a>
+           
             <a href="https://www.tiktok.com/@killer_queen5555" class="button">
                 <img src="Images/TikTok Logo.png" alt="TikTok">
                 TikTok
@@ -119,23 +137,7 @@
                 YouTube
             </a>
 
-            <!--Valentines/ Download Section-->
-            <!-- Main Download Button -->
-<button id="openModalButton" class="button">
-    <img src="Images/KQ Brand Logo (1).png" alt="design brand logo">
-    <span class="button-text">Free Valentines PDF</span>
-</button>
-
-<!-- Modal (Hidden by Default) -->
-<div id="pdfModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Free Valentines Download</h2>
-        <a href="Files/I choose You valentine.pdf" download="I choose You valentine.pdf" class="modal-button">Pokemon</a>
-        <a href="Files/Make Me Moist Valentines.pdf" download="Make Me Moist Valentines.pdf" class="modal-button">Cake</a>
-        <a href="Files/Web Dev Valentines.pdf" download="Web Dev Valentines.pdf" class="modal-button">Web Dev</a>
-    </div>
-</div>
+        
 
 <a href="https://www.twitch.tv/killer_queen55" class="button">
     <img src="Images/Twitch logo.png" alt="Twitch">
@@ -171,7 +173,21 @@
                 <img src="Images/github logo.png" alt="running-button">
                 Programming Projects
             </a>
-            
+
+           <a href="https://www.legendarysupps.com/kq55" class="button shaking-button">
+                <img src="Images/Kraken Logo.png" alt="Legendary Supps "> Legendary Supps
+                <span class="button-text">
+                    <br>
+                    <span class="discount-text">* KQ10 for 10% off *</span>
+                </span>
+            </a>
+           
+            <div class="venmo-qr-section">
+    <h2>Tips Appreciated</h2>
+    <a href="https://venmo.com/code?user_id=2786639256485888279&created=1780599390" target="_blank" rel="noopener noreferrer">
+        <img src="Images/Venmo QR code.jpg" alt="Venmo QR code" class="venmo-qr">
+    </a>
+            </div>
 <!-- THE github link which is hidden due to older projects having my Full name conected to them and not wanting to DOX myself -->
             <!-- https://github.com/MLE-MKE -->
 
